@@ -6,7 +6,7 @@ INICIO
 	IMPRIMA("Peguei a cesta com babatas do porão");
 	IMPRIMA("Peguei a panela do armario");	
 	SE bolSaiaClara = V ENTÃO
-      bolAvental <- V;
+      		bolAvental <- V;
 	FIM-SE 
 	ENQUANTO intQtdBatatas > 0 FAÇA
 		intQtdBatatas <- intQtdBatatas - 1;
