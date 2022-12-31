@@ -1,0 +1,13 @@
+Relato 
+    O Sr. Tosco quer que Rosie, a Robo, conte quantas barras de chocolate 
+    ele tem na geladeira.
+
+Algoritimo
+
+INICIO
+    INTEIRO: CONTADOR
+    CONTADOR <= 0
+    ENQUANTO "existir chocolate" FAÇA
+        CONTADOR = CONTADOR+1
+    FIM-ENQUANTO
+FIM  
