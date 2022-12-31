@@ -1,13 +1,20 @@
 Relato 
-    O Sr. Tosco quer que Rosie, a Robo, conte quantas barras de chocolate 
+======
+    O Sr. Tosco quer que Rosie, a Robô, conte quantas barras de chocolate 
     ele tem na geladeira.
 
-Algoritimo
+Algoritimo Contador
+=================== 
 
 INICIO
-    INTEIRO:CONTADOR
-    CONTADOR<=0
-    ENQUANTO "existir chocolate" FAÇA
-        CONTADOR=CONTADOR+1
+    LÓGICO:bolExisteChocolate 
+    INTEIRO:intContador
+    bolExisteChocolate<=F
+    intContador<=0
+    RECEBA("EXISTE CHOCOLATE?",bolExisteChocolate)
+    ENQUANTO bolExisteChocolate <> F FAÇA
+        intContador=intContador+1
+        RECEBA("EXISTE CHOCOLATE?",bolExisteChocolate)
     FIM-ENQUANTO
+    IMPRIMA("Existem ",intContador," chocolates")
 FIM  

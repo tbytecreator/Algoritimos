@@ -1,11 +1,20 @@
+Relato 
+------
+	o Sr. Tosco tem um numero indeterminado de chocolates na sua geladeira
+	ele quer saber qual a soma dos pesos de todos os chocolates que estão 
+	em sua geladeira. 
+
+Algoritimo Acumulador
+---------------------
+
 INICIO 
-	INTEIRO: PESO, ACUMULADOR;
-	PESO <=0;
-	ACUMULADOR <= 0;
-	RECEBA(“Qual o peso da barra? ”,PESO)
-	ENQUANTO PESO <> 0 FAÇA
-		ACUMULADOR<= ACUMULADOR+PESO
-        RECEBA(PESO)
+	INTEIRO:intPeso,intAcumulador;
+	intPeso<=0;
+	intAcumulador<=0;
+	RECEBA("Qual o peso da barra?",intPeso)
+	ENQUANTO intPeso <> 0 FAÇA
+		intAcumulador<=intAcumulador+intPeso
+        RECEBA("Qual o peso da barra? ",intPeso)
     FIM-ENQUANTO 
-    IMPRIMA(“A Soma dos pesos é “,ACUMULADOR) 
+    IMPRIMA("A Soma dos pesos e :",intAcumulador) 
 FIM
