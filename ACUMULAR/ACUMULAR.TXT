@@ -1,5 +1,6 @@
 INICIO 
 	INTEIRO: PESO, ACUMULADOR;
+	PESO <=0;
 	ACUMULADOR <= 0;
 	RECEBA(“Qual o peso da barra? ”,PESO)
 	ENQUANTO PESO <> 0 FAÇA
