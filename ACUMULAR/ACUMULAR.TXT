@@ -11,10 +11,10 @@ INICIO
 	INTEIRO:intPeso,intAcumulador;
 	intPeso<=0;
 	intAcumulador<=0;
-	RECEBA("Qual o peso da barra?",intPeso)
+	LEIA(intPeso)
 	ENQUANTO intPeso <> 0 FAÇA
 		intAcumulador<=intAcumulador+intPeso
-        RECEBA("Qual o peso da barra? ",intPeso)
+        LEIA(intPeso)
     FIM-ENQUANTO 
     IMPRIMA("A Soma dos pesos e :",intAcumulador) 
 FIM
