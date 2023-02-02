@@ -5,9 +5,10 @@
 50 KEY OFF:CLS:SCREEN 0:WIDTH 40:CLS
 60 DEFINT A-Z 
 70 PS=0:AC=0
-100 INPUT "Peso da barra (0 para sair)";PS
+100 READ PS
 110 IF PS=0 THEN 140 
 120 AC=AC+PS
 130 GOTO 100
-140 ?:?"A Soma dos pesos e:";AC
+140 ?:?"A Soma dos pesos e:";AC:?
 150 END
+160 DATA 10,20,30,40,50,0
