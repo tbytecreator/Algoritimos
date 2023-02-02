@@ -1,8 +1,8 @@
-10 ' =====================================
-20 ' ESTE PROGRAMA IMPLEMENTA EM MSX BASIC 
+10 ' ===================================
+20 '  IMPLEMENTA EM MSX BASIC 
 30 ' O ALGORITIMO DE ACUMULADOR 
-40 ' =====================================
-50 KEY OFF:CLS:SCREEN 0:WIDTH 40:CLS
+40 ' ===================================
+50 KEY OFF:SCREEN 0:WIDTH 40:CLS
 60 DEFINT A-Z 
 70 PS=0:AC=0
 100 READ PS
