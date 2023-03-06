@@ -1,0 +1,25 @@
+Relato 
+------
+	o Sr. Tosco deseja saber qual a barra de chocolate mais pesada e a barra de chocolate mais leve 
+	que ele possui em sua geladeira. 
+
+Algoritimo Maior / Menor  
+---------------------
+
+INICIO 
+	INTEIRO:intMaior,intMenor,intPeso;
+	LEIA(intPeso)
+	intMaior <- intPeso;
+	intMenor <- intPeso;
+	ENQUANTO intPeso <> 0 FAÇA
+		SE intPeso > intMaior
+			ENTÃO intMaior <- intPeso;
+			SENÃO 	SE intPeso < intMenor
+						ENTÃO intMenor <- intPeso; 
+					FIM-SE;
+		FIM-SE;	
+		LEIA(intPeso)
+    FIM-ENQUANTO 
+    IMPRIMA("O maior peso é :",intMaior)
+	IMPRIMA("O menor peso é :",intMenor) 
+FIM
