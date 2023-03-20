@@ -1,11 +1,11 @@
 Relato 
 ------
-	o Sr. Tosco deseja saber qual a barra de chocolate mais pesada e a barra de chocolate mais leve 
+	o Sr. Tosco deseja saber qual a barra de chocolate mais 
+	pesada e a barra de chocolate mais leve 
 	que ele possui em sua geladeira. 
 
 Algoritimo Maior / Menor  
 ---------------------
-
 INICIO 
 	INTEIRO:intMaior,intMenor,intPeso;
 	LEIA(intPeso)
