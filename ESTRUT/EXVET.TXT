@@ -1,0 +1,71 @@
+Relato 
+======
+    O Sr. Tosco tem cinco cozinheiros em sua cozinha. Ele deseja avaliar cada um deles 
+    individualmente dando notas inteiras a cada um. Cada cozinheiro receberá uma nota 
+    inicial 10 e toda vez que um cozinheiro cometer um erro, um ponto deve ser retirado 
+    de sua nota inicial.
+
+    Ao final do dia, o programa deve imprimir a nota final de cada cozinheiro no seguinte 
+    formato: 
+    Cozinheiro 1 => Nota
+    Cozinheiro 2 => Nota
+    ...
+    Cozinheiro 5 => Nota
+
+Uso de um vetor (array)
+======================= 
+
+PROCEDIMENTO InicializarNotas() {Inicializar as notas dos cozinheiros}
+    INTEIRO: i;
+    PARA i de 0 a 4 FAÇA
+        cozinheiro[i]=10
+    FIM-PARA
+FIM-PROCEDIMENTO 
+
+PROCEDIMENTO BaixarNota() {Remove um ponto de um cozinheiro}
+    
+    INTEIRO indice,nota_atual;
+
+    IMPRIMA("Qual cozinheiro? (0-4)");
+    IMPRIMA("================================");
+    IMPRIMA(">");
+    RECEBA(indice);
+    SE indice <0 OU indice >4
+        IMPRIMA("Código de cozinheiro invalido!");
+    SENÃO 
+        nota_atual = cozinheiro[indice];
+        nota_atual = nota_atual-1;
+        cozinheiro[indice]=nota_atual;
+    FIM-SE  
+
+FIM-PROCEDIMENTO
+
+INICIO
+    {Tipos}
+    TIPO NOTAS = VETOR[0:4] INTEIRO;
+    {Variaveis}
+    CARACTER: opcao=" ";
+    INTEIRO : f=0;
+    NOTAS   : cozinheiro;
+
+    {Loop principal do programa}
+
+    InicializarNotas; {procedimento}
+    ENQUANTO opcao <> 'F' E opcao <> 'f' 
+        IMPRIMA("Digite um opção abaixo:")
+        IMPRIMA("================================")
+        IMPRIMA("(B)aixar a nota de um cozinheiro")
+        IMPRIMA("(F)inalizar o dia               ")
+        IMPRIMA("================================")
+        IMPRIMA(">")
+        RECEBA(opcao)
+        SE opcao = "b" OU opcao = "B" 
+            BaixarNota {procedimento}
+        FIM-SE
+    FIM-ENQUANTO
+    PARA f de 0 a 4 FAÇA
+        IMPRIMA("Cozinheiro ",f,"=>",cozinheiro[f])
+    FIM-PARA
+FIM  
+
+
