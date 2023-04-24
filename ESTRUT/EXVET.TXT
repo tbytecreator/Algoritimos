@@ -67,5 +67,3 @@ INICIO
         IMPRIMA("Cozinheiro ",f,"=>",cozinheiro[f])
     FIM-PARA
 FIM  
-
-
