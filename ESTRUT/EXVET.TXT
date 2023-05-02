@@ -1,12 +1,12 @@
 Relato 
 ======
-    O Sr. Tosco tem cinco cozinheiros em sua cozinha. Ele deseja avaliar cada um deles 
-    individualmente dando notas inteiras a cada um. Cada cozinheiro receberá uma nota 
-    inicial 10 e toda vez que um cozinheiro cometer um erro, um ponto deve ser retirado 
-    de sua nota inicial.
+    O Sr. Tosco tem cinco cozinheiros em sua cozinha. Ele deseja avaliar cada um 
+    deles individualmente dando notas inteiras a cada um. Cada cozinheiro 
+    receberá uma nota inicial 10 e toda vez que um cozinheiro cometer um erro, 
+    um ponto deve ser retirado de sua nota inicial.
 
-    Ao final do dia, o programa deve imprimir a nota final de cada cozinheiro no seguinte 
-    formato: 
+    Ao final do dia, o programa deve imprimir a nota final de cada cozinheiro 
+    no seguinte formato: 
 
     Cozinheiro 1 => Nota
     Cozinheiro 2 => Nota
