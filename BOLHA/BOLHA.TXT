@@ -1,0 +1,33 @@
+Relato 
+======
+    O Sr. Tosco tem uma lista de pesos de peças de carne, 
+    que ele deseja que sejam usados na cozinha do menos 
+    peso para o maior peso. Precisamos pegar essa lista de 
+    pesos e ordena-la do menor valor para o maior valor.
+
+O Método Bolha
+==============
+
+INICIO {METODO BOLHA}
+    TIPO V = VETOR [1:20] INTEIRO;
+    V VET;
+    INTEIRO AUX,    {AUXILIA A TROCA DE VARIAVEIS}
+            BOLHA,  {MAIOR ELEMENTO FORA DE ORDEM}
+            LSUP,   {LIMITE SUPERIOR DO ARRAY}
+            J;      {INDICE DO VETOR}
+    LEIA(VET);
+    LSUP<-20;
+    ENQUANTO LSUP > 1 FAÇA
+        BOLHA <- 0;
+        PARA J DE 1 ATE LSUP -1 FAÇA
+            SE VET[J]>VET[J+1] ENTÃO
+                AUX <- VET[J];
+                VET[J]<-VET[J+1];
+                VET[J+1]<-AUX;
+                BOLHA <- J
+            FIM-SE
+        FIM-PARA
+        LSUP<-BOLHA;
+    FIM-ENQUANTO
+    IMPRIMA(VET)
+FIM

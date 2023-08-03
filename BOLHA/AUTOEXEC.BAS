@@ -1,5 +1,5 @@
 010 ' ============================'
-020 ' EXEMPLO DE VETOR            '
+020 ' ORDENACAO POR METODO BOLHA  '
 030 ' ============================'
 040 KEY OFF:SCREEN 0:WIDTH 40:CLS
 050 DEFINT A-Z
