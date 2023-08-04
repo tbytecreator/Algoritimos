@@ -33,3 +33,7 @@ Exemplos usados para o aprendizado das estruturas de dados básicas
 
 Aula relacionada: https://www.youtube.com/watch?v=0OQTadXwGec
 
+# BOLHA
+
+Implementação da ordenação de vetores usando o método bolha em C.
+
