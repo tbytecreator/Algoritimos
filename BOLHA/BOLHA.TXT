@@ -8,18 +8,34 @@ Relato
 O Método Bolha
 ==============
 
+PROCEDIMENTO CarregarVetor() {CARREGA O VETOR}
+    VET[0]=3
+    VET[1]=1
+    VET[2]=5
+    VET[3]=4
+    VET[4]=2
+FIM-PROCEDIMENTO
+
+PROCEDIMENTO ImprimeVetor() {IMPRIME O VETOR}
+    VET[0]=3
+    VET[1]=1
+    VET[2]=5
+    VET[3]=4
+    VET[4]=2
+FIM-PROCEDIMENTO
+
 INICIO {METODO BOLHA}
-    TIPO V = VETOR [1:20] INTEIRO;
+    TIPO V = VETOR [0:4] INTEIRO;
     V VET;
     INTEIRO AUX,    {AUXILIA A TROCA DE VARIAVEIS}
             BOLHA,  {MAIOR ELEMENTO FORA DE ORDEM}
             LSUP,   {LIMITE SUPERIOR DO ARRAY}
             J;      {INDICE DO VETOR}
-    LEIA(VET);
-    LSUP<-20;
-    ENQUANTO LSUP > 1 FAÇA
+    CarregarVetor();
+    LSUP<-4;
+    ENQUANTO LSUP > 0 FAÇA
         BOLHA <- 0;
-        PARA J DE 1 ATE LSUP -1 FAÇA
+        PARA J DE 0 ATE LSUP -1 FAÇA
             SE VET[J]>VET[J+1] ENTÃO
                 AUX <- VET[J];
                 VET[J]<-VET[J+1];
@@ -29,5 +45,5 @@ INICIO {METODO BOLHA}
         FIM-PARA
         LSUP<-BOLHA;
     FIM-ENQUANTO
-    IMPRIMA(VET)
+    ImprimeVetor()
 FIM
