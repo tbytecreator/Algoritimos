@@ -1,7 +1,7 @@
 Relato 
 ======
     O Sr. Tosco tem uma lista de pesos de peças de carne, 
-    que ele deseja que sejam usados na cozinha do menos 
+    que ele deseja que sejam usados na cozinha do menor 
     peso para o maior peso. Precisamos pegar essa lista de 
     pesos e ordena-la do menor valor para o maior valor.
 
@@ -37,7 +37,7 @@ INICIO {METODO BOLHA}
                 AUX <- VET[J];
                 VET[J]<-VET[J+1];
                 VET[J+1]<-AUX;
-                BOLHA <- J
+                BOLHA <- J;
             FIM-SE
         FIM-PARA
         LSUP<-BOLHA;
