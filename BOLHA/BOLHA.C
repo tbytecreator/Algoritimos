@@ -1,7 +1,9 @@
-/*
-Ordenacao de vetor 
-usando metodo bolha
-*/
+// ===================================
+// Ordenacao de vetor usando metodo 
+// bolha
+// ===================================
+// MANOEL NETO - 2023-10-10
+// ===================================
 #include "fusion-c/header/msx_fusion.h"
 
 int intVetor[5];
@@ -17,39 +19,47 @@ void CarregarVetor()
 
 void ImprimirVetor()
 {
-  int j;
-  for(j=0;j<5;j++)
+  int i;
+  for(i=0;i<5;i++)
   {
-    PrintNumber(intVetor[j]);
+    PrintNumber(intVetor[i]);
   }
   Print("\n");
 }
 
+void TrocaPosicao(int index)
+{
+  int aux=0;
+  aux=intVetor[index];
+  intVetor[index]=intVetor[index+1];
+  intVetor[index+1]=aux;
+}
+
 void main(void) 
 {
-  int i,aux=0,bolha,lsup=4;
+  int i,bolha,limiteSuperior=4;
   CarregarVetor();
-  Print("Vetor Inicial=>");
+  Print("\nVetor Inicial=>");
   ImprimirVetor();
-  while(lsup>0)
+  Print("\n");
+  while(limiteSuperior>0)
   {
     Print("Limite Superior ");
-    PrintNumber(lsup);
+    PrintNumber(limiteSuperior);
     Print("\n=================\n");
     bolha=0;
-    for(i=0;i<=lsup-1;i++)
+    for(i=0;i<=limiteSuperior-1;i++)
     {
       if(intVetor[i]>intVetor[i+1])
       {
-        aux=intVetor[i];
-        intVetor[i]=intVetor[i+1];
-        intVetor[i+1]=aux;
+        TrocaPosicao(i);
         bolha=i;
         PrintNumber(i);
         Print("=>");
         ImprimirVetor();
       }
     }
-    lsup=bolha;
+    limiteSuperior=bolha;
+    Print("\n");
   }
 }
