@@ -6,7 +6,7 @@
 // ===================================
 #include "fusion-c/header/msx_fusion.h"
 
-int intVetor[5];
+int intVetor[5]; //0-4 (cinco posicoes) Escopo global
 
 void CarregarVetor()
 {
