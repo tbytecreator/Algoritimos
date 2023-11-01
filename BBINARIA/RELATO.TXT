@@ -1,0 +1,81 @@
+Relato 
+======
+    O Sr. Tosco tem uma lista de pesos de peças de carne, 
+    e ele deseja que os cozinheiros possam procurar no 
+    sistema da Rosie, se ela já possui um pedaço de 
+    carne cortada no peso exato que ele precisa usar. 
+    Caso não exista esse peso, a Rosie deve retornar 
+    o próximo maior peso para o cozinheiro.
+
+A Busca binária
+===============
+
+PROCEDIMENTO CarregarVetor() {CARREGA O VETOR}
+    PARA i DE 0 A 24 FAÇA
+        pesos[i]=RANDOMICO(1,24)
+    FIM PARA 
+FIM-PROCEDIMENTO
+
+PROCEDIMENTO ImprimeVetor() {IMPRIME O VETOR}
+    PARA i DE 0 A 24 FAÇA
+        IMPRIMA(VET[i]);
+    FIM-PARA
+FIM-PROCEDIMENTO
+
+PROCEDIMENTO OrdenacaoBolha(V pesos) {METODO BOLHA}
+
+    INTEIRO AUX,    {AUXILIA A TROCA DE VARIAVEIS}
+            BOLHA,  {MAIOR ELEMENTO FORA DE ORDEM}
+            LSUP<-4,   {LIMITE SUPERIOR DO ARRAY}
+            J;      {INDICE DO VETOR}
+    
+    ENQUANTO LSUP > 0 FAÇA
+        BOLHA <- 0;
+        PARA J DE 0 ATE LSUP -1 FAÇA
+            SE VET[J]>VET[J+1] ENTÃO
+                AUX <- VET[J];
+                VET[J]<-VET[J+1];
+                VET[J+1]<-AUX;
+                BOLHA <- J;
+            FIM-SE
+        FIM-PARA
+        LSUP<-BOLHA;
+    FIM-ENQUANTO
+
+FIM
+
+FUNÇÃO INTEIRO BuscaBinaria(INTEIRO valorProcurado,V pesos)
+
+    INTEIRO chute=0, {CHUTE DA POSICAO DO ALGORITIMO}
+            min=0,   {MENOR POSICAO DO VETOR}
+            max=24   {MAIOR POSICAO DO VETOR}
+    
+    ENQUANTO max > min FAÇA
+
+        chute=ARREDONDE((max+min)/2,PARABAIXO) 
+        SE pesos[chute] = valorProcurado ENTÃO
+            RETORNE chute {Voce encontrou}
+        SENÃO
+            SE pesos[chute] < valorProcurado ENTÃO 
+                min = chute+1
+            SENÃO 
+                max = chute-1
+    FIM ENQUANTO
+
+    RETORNE -1 {NAO ACHAMOS NO VETOR}
+
+FIM-PROCEDIMENTO
+
+INICIO
+    TIPO V = VETOR [0:24] INTEIRO;
+    V pesos;
+     
+    RECEBA(valorProcurado)
+    PosicaoNoVetor=BuscaBinaria(valorProcurado,pesos)
+
+    SE PosicaoNoVetor = -1 
+        IMPRIMA("Não achamos um pedaco cortado")
+    SENÃO
+        IMPRIMA("Achamos na prateleira ",PosicaoNoVetor,"O PESO",pesos[PosicaoNoVetor])
+    FIM-SE
+FIM
