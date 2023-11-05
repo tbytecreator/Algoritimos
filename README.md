@@ -37,3 +37,8 @@ Aula relacionada: https://www.youtube.com/watch?v=0OQTadXwGec
 
 Implementação da ordenação de vetores usando o método bolha em C.
 
+Aulas relacionadas: 
+
+https://www.youtube.com/watch?v=bvYYNTeyAvg&list=PLM6UACsvLoSDLqIH6MShGFyWyH_f1ZeGO&index=9
+https://www.youtube.com/watch?v=bvYYNTeyAvg&list=PLM6UACsvLoSDLqIH6MShGFyWyH_f1ZeGO&index=10
+
