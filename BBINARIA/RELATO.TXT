@@ -4,20 +4,28 @@ Relato
     e ele deseja que os cozinheiros possam procurar no 
     sistema da Rosie, se ela já possui um pedaço de 
     carne cortada no peso exato que ele precisa usar. 
-    Caso não exista esse peso, a Rosie deve retornar 
-    o próximo maior peso para o cozinheiro.
 
 A Busca binária
 ===============
 
-PROCEDIMENTO CarregarVetor() {CARREGA O VETOR}
-    PARA i DE 0 A 24 FAÇA
-        pesos[i]=RANDOMICO(1,24)
-    FIM PARA 
+FUNÇÃO INTEIRO Randomico(limiteInical,limiteFinal) {SORTEIA UM NUMERO PSEUDO-RANDOMICO}
+
+    INTEIRO randomico
+    randomico = DIVISAOINTEIRA(SEMENTE,(limiteFinal-limiteInical)+limiteInical)
+    RETORNE RANDOMICO
+
+FIM-FUNCAO
+
+PROCEDIMENTO CarregarVetor(V pesos) {CARREGA O VETOR}
+
+    PARA i DE 0 A 9 FAÇA
+        pesos[i]=RANDOMICO(1,10)
+    FIM-PARA 
+
 FIM-PROCEDIMENTO
 
-PROCEDIMENTO ImprimeVetor() {IMPRIME O VETOR}
-    PARA i DE 0 A 24 FAÇA
+PROCEDIMENTO ImprimeVetor(V pesos) {IMPRIME O VETOR}
+    PARA i DE 0 A 9 FAÇA
         IMPRIMA(VET[i]);
     FIM-PARA
 FIM-PROCEDIMENTO
@@ -42,13 +50,13 @@ PROCEDIMENTO OrdenacaoBolha(V pesos) {METODO BOLHA}
         LSUP<-BOLHA;
     FIM-ENQUANTO
 
-FIM
+FIM-PROCEDIMENTO
 
 FUNÇÃO INTEIRO BuscaBinaria(INTEIRO valorProcurado,V pesos)
 
     INTEIRO chute=0, {CHUTE DA POSICAO DO ALGORITIMO}
             min=0,   {MENOR POSICAO DO VETOR}
-            max=24   {MAIOR POSICAO DO VETOR}
+            max=9   {MAIOR POSICAO DO VETOR}
     
     ENQUANTO max > min FAÇA
 
@@ -57,25 +65,30 @@ FUNÇÃO INTEIRO BuscaBinaria(INTEIRO valorProcurado,V pesos)
             RETORNE chute {Voce encontrou}
         SENÃO
             SE pesos[chute] < valorProcurado ENTÃO 
-                min = chute+1
+                min = chute+1 {NUMERO MENOR, CHUTE PARA CIMA}
             SENÃO 
-                max = chute-1
+                max = chute-1 {NUMERO MAIOR, CHUTE PARA BAIXO}
+        FIM-SE
+
     FIM ENQUANTO
 
     RETORNE -1 {NAO ACHAMOS NO VETOR}
 
-FIM-PROCEDIMENTO
+FIM-FUNCAO
 
 INICIO
-    TIPO V = VETOR [0:24] INTEIRO;
+    INTEIRO posicaoNoVetor
+    TIPO V = VETOR [0:9] INTEIRO;
     V pesos;
      
     RECEBA(valorProcurado)
-    PosicaoNoVetor=BuscaBinaria(valorProcurado,pesos)
+    CarregarVetor(pesos)
+    OrdenacaoBolha(pesos)
+    posicaoNoVetor=BuscaBinaria(valorProcurado,pesos)
 
-    SE PosicaoNoVetor = -1 
+    SE posicaoNoVetor = -1 
         IMPRIMA("Não achamos um pedaco cortado")
     SENÃO
-        IMPRIMA("Achamos na prateleira ",PosicaoNoVetor,"O PESO",pesos[PosicaoNoVetor])
+        IMPRIMA("Achamos na prateleira ",posicaoNoVetor,"O PESO",pesos[posicaoNoVetor])
     FIM-SE
 FIM
