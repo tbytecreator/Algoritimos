@@ -42,3 +42,13 @@ Aulas relacionadas:
 https://www.youtube.com/watch?v=bvYYNTeyAvg&list=PLM6UACsvLoSDLqIH6MShGFyWyH_f1ZeGO&index=9
 https://www.youtube.com/watch?v=bvYYNTeyAvg&list=PLM6UACsvLoSDLqIH6MShGFyWyH_f1ZeGO&index=10
 
+# BBINARIA
+
+Implementação da busca binária em C
+
+Aulas relacionadas:
+
+https://www.youtube.com/watch?v=u_OYd6S2TMo&list=PLM6UACsvLoSDLqIH6MShGFyWyH_f1ZeGO&index=11
+
+
+
