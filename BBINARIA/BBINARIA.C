@@ -83,9 +83,21 @@ void OrdenarVetor()
 
 int BuscaBinaria(int valorProcurado)
 {
-    int chute=0,min=0;
-    int max = sizeof(pesos) / sizeof(pesos[0]);
+    float chute,resto;
+    int max = sizeof(pesos) / sizeof(pesos[0]),min=0,pos=-1;
+
+    // testa se esta na pos 0
+    if (pesos[0]==valorProcurado)
+    {
+      return(0);
+    }
     
+    // testa se esta na ultima posicao 
+    if (pesos[max-1]==valorProcurado)
+    {
+      return(max-1);
+    }
+
     while(max>min)
     {
       Print("\nMinimo=>");
@@ -94,24 +106,34 @@ int BuscaBinaria(int valorProcurado)
       Print("\nMaximo=>");
       PrintNumber(max);
       Print(" ");
-      chute=ceil_sdcc((max+min)/2);
-      Print("\nChute Atual=>");
-      PrintNumber(chute);
-      Print(" ");
-      
-      if(pesos[chute]==valorProcurado)
+      resto=(max+min)%2;  
+
+      if (resto==0)
       {
-        return(chute);
+        Print("\nNao teve resto\n");
+        chute=(max+min)/2;
+        pos=chute; 
       }
       else
       {
-        if(pesos[chute]<valorProcurado)
+        Print("\nteve resto\n");
+        pos=((max+min)/2)+1;
+      }
+      Print("Posicao=>");
+      PrintNumber(pos);
+      if(pesos[pos]==valorProcurado)
+      {
+        return(pos);
+      }
+      else
+      {
+        if(pesos[pos]<valorProcurado)
         {
-          min = chute+1;
+          min = pos+1;
         }
         else
         {
-          max = chute-1;
+          max = pos-1;
         }
       }
     }
@@ -141,7 +163,7 @@ void main(void)
   
   // comeca o loop de pesquisas
   PegarPeso();
-  while((int)valorProcurado!=0)
+  while(atoi(valorProcurado)!=0)
   {
     posicaoNoVetor=BuscaBinaria(atoi(valorProcurado));
     if (posicaoNoVetor!=-1)
