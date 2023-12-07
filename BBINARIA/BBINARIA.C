@@ -9,7 +9,21 @@
 #include "fusion-c/header/msx_fusion.h"
 
 int pesos[10];
+char valorProcurado[2];
 TIME tm;
+
+float ceil_sdcc(float x) 
+{
+    int int_part = (int)x;
+    if (x > int_part) 
+    {
+        return int_part + 1.0;
+    } 
+    else 
+    {
+        return x;
+    }
+}
 
 char RandomNumber(char min, char max)
 {  
@@ -25,7 +39,7 @@ void CarregarVetor()
 
   for(i=0;i<size;i++)
   {
-    pesos[i]=RandomNumber(1,26);
+    pesos[i]=RandomNumber(1,50);
   }
 }
 
@@ -48,7 +62,7 @@ void ImprimirVetor()
 void OrdenarVetor()
 {
   int i,bolha,aux=0;
-  int limiteSuperior = sizeof(pesos) / sizeof(pesos[0]);
+  int limiteSuperior = (sizeof(pesos) / sizeof(pesos[0]))-1;
   
   while(limiteSuperior>0)
   {
@@ -70,12 +84,21 @@ void OrdenarVetor()
 int BuscaBinaria(int valorProcurado)
 {
     int chute=0,min=0;
-    int size = sizeof(pesos) / sizeof(pesos[0]);
-
-    while(size > min)
+    int max = sizeof(pesos) / sizeof(pesos[0]);
+    
+    while(max>min)
     {
-      chute=(size+min)/2;
+      Print("\nMinimo=>");
+      PrintNumber(min);
+      Print(" ");
+      Print("\nMaximo=>");
+      PrintNumber(max);
+      Print(" ");
+      chute=ceil_sdcc((max+min)/2);
+      Print("\nChute Atual=>");
       PrintNumber(chute);
+      Print(" ");
+      
       if(pesos[chute]==valorProcurado)
       {
         return(chute);
@@ -88,32 +111,50 @@ int BuscaBinaria(int valorProcurado)
         }
         else
         {
-          size = chute-1;
+          max = chute-1;
         }
       }
-      Print("");
     }
     return(-1);
 }
 
+void PegarPeso()
+{
+  Print("\nEntre um peso (0 para sair):");
+  InputString(valorProcurado,5);
+}
+
 void main(void) 
 {
-  char* valorProcurado;
   int posicaoNoVetor=-1;
-  
+
+  // cria uma semente para 
+  // criacao de numeros aleatorios
   GetTime(&tm);               
   srand(tm.sec);
-     
+
+  // prepara o vetor de teste
   CarregarVetor();
-  Print("\nVetor Inicial");
   ImprimirVetor();
   OrdenarVetor();
-  Print("\nVetor Ordenado");
   ImprimirVetor();
-  Print("\nEntre um peso:");
-  InputString(valorProcurado,4);
-  posicaoNoVetor=BuscaBinaria(atoi(valorProcurado));
-  Print("\nPosicao no vetor=>");
-  PrintNumber(posicaoNoVetor);
-  Print("\n");
+  
+  // comeca o loop de pesquisas
+  PegarPeso();
+  while((int)valorProcurado!=0)
+  {
+    posicaoNoVetor=BuscaBinaria(atoi(valorProcurado));
+    if (posicaoNoVetor!=-1)
+    {
+      Print("\nPosicao no vetor=>");
+      PrintNumber(posicaoNoVetor);
+      Print("\n");
+    }
+    else
+    {
+      Print("\nPeso nao encontrado.\n");
+    }
+    ImprimirVetor();
+    PegarPeso();
+  }
 }
