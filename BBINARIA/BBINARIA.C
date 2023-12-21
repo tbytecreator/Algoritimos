@@ -12,19 +12,6 @@ int pesos[10];
 char valorProcurado[2];
 TIME tm;
 
-float ceil_sdcc(float x) 
-{
-    int int_part = (int)x;
-    if (x > int_part) 
-    {
-        return int_part + 1.0;
-    } 
-    else 
-    {
-        return x;
-    }
-}
-
 char RandomNumber(char min, char max)
 {  
     char random;
