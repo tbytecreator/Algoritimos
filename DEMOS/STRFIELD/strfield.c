@@ -3,13 +3,16 @@
 // Campo de estrelas
 // MANOEL NETO 2024-02-18
 //------------------------------------
-#include "stdio.h"
-#include "stdlib.h"
+#include <stdio.h>
+#include <stdlib.h>
 #include "fusion-c/header/msx_fusion.h"
-#include "fusion-c/header/vdp_graph1.h"
+#include "fusion-c/header/vdp_graph2.h"
 #include "fusion-c/header/vdp_circle.h"
 
-TIME tm;  //Init the Time Structure variable
+TIME tm;  
+#define NUMBEROFSTARS 100
+#define WIDTH 512
+#define HEIGHT 212
 
 typedef struct 
 {
@@ -18,13 +21,12 @@ typedef struct
     int z;
 } Star;
 
-// crie um array de 100 estrelas
-Star stars[100];
+Star stars[NUMBEROFSTARS];
 
 // a rnd Number between a and b-1
-char FT_RandomNumber (char a, char b)
+int FT_RandomNumber (int a,int b)
 {
-    char random;
+    int random;
     random = rand()%(b-a)+a;  
     return(random);
 }
@@ -42,37 +44,62 @@ void InitStars()
 {
   GetTime(&tm);          
   srand(tm.sec);
-  for (int i = 0; i < 100; i++) 
+  for (int i = 0; i < NUMBEROFSTARS; i++) 
   {
-    stars[i].x = FT_RandomNumber(5,250);
-    stars[i].y = FT_RandomNumber(5,190);
-    stars[i].z = FT_RandomNumber(1,4);
+    stars[i].x = FT_RandomNumber(0,WIDTH);
+    stars[i].y = FT_RandomNumber(0,HEIGHT);
+    stars[i].z = FT_RandomNumber(0,WIDTH);
   }
 }
 
-void Debug()
+void CriarFundo()
 {
-  for (int i = 0; i < 100; i++) 
+  SetColors(15,1,1);
+  Screen(7);
+  Cls();
+}
+
+int MapearValor(int valor, int minEntrada, int maxEntrada, int minSaida, int maxSaida)
+{
+  return (valor - minEntrada) * (maxSaida - minSaida) / (maxEntrada - minEntrada) + minSaida;
+}
+
+void DesenharEstrelas()
+{
+  int sx,sy,r;
+  
+  Cls();
+  for (int i = 0;i<NUMBEROFSTARS;i++) 
   {
-    PrintNumber(stars[i].x);
-    Print(" ");
-    PrintNumber(stars[i].y);
-    Print(" ");
-    PrintNumber(stars[i].z);
-    Print("\n");
+    sx=MapearValor(stars[i].x/stars[i].z,0,2.41,0,WIDTH);
+    sy=MapearValor(stars[i].y/stars[i].z,0,2.41,0,HEIGHT);
+    r=MapearValor(stars[i].z,0,WIDTH,15,0);
+    CircleFilled(sx,sy,r,15,0);
   }
 }
+
+void AtualizarEstrelas()
+{
+  for (int i=0;i<NUMBEROFSTARS;i++) 
+  {
+    stars[i].z -= 1;
+    if (stars[i].z <= 0) 
+    {
+      stars[i].x = FT_RandomNumber(0,WIDTH);
+      stars[i].y = FT_RandomNumber(0,HEIGHT);
+      stars[i].z = FT_RandomNumber(0,WIDTH);
+    }
+  }
+} 
 
 void main(void) 
 {
-  // EFEITO CAMPO DE ESTRELAS 
-  Screen(2);
-  SetColors(15,1,1);
-  //SC2BoxFill(0, 0, 256, 191,1);
-  Cls();
+  CriarFundo();
   InitStars();
-  for (int i = 0; i < 100; i++) 
+  while(1)
   {
-    SC2CircleFilled(stars[i].x, stars[i].y,stars[i].z,15);
+    DesenharEstrelas();
+    AtualizarEstrelas();
+    Wait(50);
   }
 }
