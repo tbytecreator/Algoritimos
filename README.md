@@ -50,5 +50,11 @@ Aulas relacionadas:
 
 https://www.youtube.com/watch?v=u_OYd6S2TMo&list=PLM6UACsvLoSDLqIH6MShGFyWyH_f1ZeGO&index=11
 
+# RECURSIV
+
+Algoritimo de calculo de fatorial usando recursividade em MSX BASIC
+
+https://www.youtube.com/watch?v=CuOwpsmH5Ao&list=PLM6UACsvLoSDLqIH6MShGFyWyH_f1ZeGO&index=13
+
 
 
