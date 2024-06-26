@@ -1,25 +1,33 @@
-#include <stdio.h>
+#include "C:\Program Files\SDCC\include\stdio.h"
 #include "fusion-c/header/msx_fusion.h"
 
 // -----------------------------------
 // PREPARAR A TELA 
 // -----------------------------------
-void PrepararTela(void)
+void PrepararTela()
 {
     Screen(0);
     Width(40);
     Cls();
 }
 
+int RecebeNumero()
+{
+    float numero;
+    printf("Digite um número decimal:");
+    scanf("%d", &numero);
+    return numero;
+}
+
 // -----------------------------------
 // CALCULA O PRODUTO VETORIAL  
 // -----------------------------------
-int ProdutoVetorial(vetor1, vetor2)
+int ProdutoVetorial(int *vetor1, int *vetor2, int tam)
 {
     int i;
     int produto = 0;
     
-    for (i=0; i<5; i++)
+    for (i=0; i<tam; i++)
     {
         produto += vetor1[i] * vetor2[i];
     }
@@ -39,9 +47,11 @@ void main(void)
     Print("Calculo do Produto Vetorial 1.0\n");
     Print("Manoel Neto 2024-06-26\n");
     Print("-----------------------------\n");
-    InputDecimal("Digite o primeiro vetor: ", vetor1, 5);
-    InputDecimal("Digite o segundo vetor: ", vetor2, 5);
-    produto = ProdutoVetorial(vetor1, vetor2);
+    Print("Preencher o vetor1 com 5 elementos:\n");
+    for i = 0 to 4 vetor1[i] = RecebeNumero();
+    Print("Preencher o vetor2 com 5 elementos:\n");
+    for i = 0 to 4 vetor2[i] = RecebeNumero();
+    produto = ProdutoVetorial(vetor1, vetor2, 5);
     Print("O produto vetorial eh: ");
     Print("-----------------------------\n");
     PrintDec(produto);
