@@ -1,4 +1,4 @@
-#include "C:\Program Files\SDCC\include\stdio.h"
+#include <stdio.h>
 #include "fusion-c/header/msx_fusion.h"
 
 // -----------------------------------
@@ -13,9 +13,9 @@ void PrepararTela()
 
 int RecebeNumero()
 {
-    float numero;
-    printf("Digite um número decimal:");
-    scanf("%d", &numero);
+    char numero[1];
+    Print("Digite um número decimal:");
+    InputString(numero,1);
     return numero;
 }
 
