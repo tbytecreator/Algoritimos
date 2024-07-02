@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
 
 int RecebeNumero(void)
 {
@@ -11,11 +10,11 @@ int RecebeNumero(void)
 
 int CalculaProdutoVetorial(int *vetor1,int *vetor2, int tamanho)
 {
-    int i;
+    int j;
     int produto=0;
-    for(i=0;i<tamanho;i++)
+    for(j=0;j<tamanho;j++)
     {
-        produto+=vetor1[i]*vetor2[i];
+        produto+=vetor1[j]*vetor2[j];
     }
     return produto;
 }
