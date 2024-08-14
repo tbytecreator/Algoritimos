@@ -1,0 +1,13 @@
+ Volume in drive A: has no name
+ Directory of A:\
+
+CONSOLE  COM      1014 06-27-24  5:53p
+MSXDOS2  SYS      4870 06-27-24  5:53p
+PRODVET  COM      1192 07-16-24  6:30p
+COMMAND2 COM     15708 06-27-24  5:53p
+DSKA            <dir>  06-27-24  5:53p
+DSKB            <dir>  06-27-24  5:53p
+HDA-1           <dir>  06-27-24  5:53p
+EXPORT          <dir>  06-27-24  5:53p
+LISTA    TXT         0 07-16-24  6:31p
+ 22K in 9 files 606K free

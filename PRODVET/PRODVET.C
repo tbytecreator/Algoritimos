@@ -48,9 +48,9 @@ void main(void)
     Print("Manoel Neto 2024-06-26\n");
     Print("-----------------------------\n");
     Print("Preencher o vetor1 com 5 elementos:\n");
-    for i = 0 to 4 vetor1[i] = RecebeNumero();
+    for(int i=0;i<5;i++) vetor1[i] = RecebeNumero();
     Print("Preencher o vetor2 com 5 elementos:\n");
-    for i = 0 to 4 vetor2[i] = RecebeNumero();
+    for(int i=0;i<5;i++) vetor2[i] = RecebeNumero();
     produto = ProdutoVetorial(vetor1, vetor2, 5);
     Print("O produto vetorial eh: ");
     Print("-----------------------------\n");
