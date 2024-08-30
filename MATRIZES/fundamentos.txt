@@ -1,15 +1,13 @@
-// Algoritmo para explicar matrizes, diagonal principal e matriz identidade
+// Algoritmo para explicar matrizes, 
+// diagonal principal e matriz 
+// identidade
 
 // Definir uma matriz de exemplo
+// Nesse caso definimos uma matriz 
+// de ordem 3
 matriz_exemplo = [[1, 2, 3],
                   [4, 5, 6],
                   [7, 8, 9]]
-
-// Verificar a diagonal principal
-diagonal_principal = []
-para i de 0 até tamanho(matriz_exemplo) faça
-    diagonal_principal.adicionar(matriz_exemplo[i][i])
-fim para
 
 // Verificar se a matriz é uma matriz identidade
 e_identidade = verdadeiro
@@ -25,10 +23,8 @@ para i de 0 até tamanho(matriz_exemplo) faça
     fim para
 fim para
 
-// Imprimir os resultados
-imprimir("A diagonal principal da matriz é: ", diagonal_principal)
-se e_identidade então
-    imprimir("A matriz é uma matriz identidade.")
-senão
-    imprimir("A matriz não é uma matriz identidade.")
-fim se
+// Verificar a diagonal principal
+diagonal_principal = []
+para i de 0 até tamanho(matriz_exemplo) faça
+    diagonal_principal.adicionar(matriz_exemplo[i][i])
+fim para
