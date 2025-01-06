@@ -1,0 +1,21 @@
+Relato 
+======
+
+  Crie um registro que represente um endereço.
+
+Definindo um registro
+=====================
+
+tipo Endereco = registro
+	caracter: logradouro
+	caracter: bairro
+	inteiro: numero
+	real: cep
+	caracter: estado
+	caracter: pais
+fim registro
+
+Crie uma variaável do tipo registro
+====================================
+
+Endereco: enderecoAtual;
