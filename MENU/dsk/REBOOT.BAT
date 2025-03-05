@@ -1,0 +1,2 @@
+if %BACKSLASH% == ON YENSLASH ON
+menu
