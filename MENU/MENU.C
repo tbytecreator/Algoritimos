@@ -15,7 +15,6 @@ typedef struct
 } MenuItem;
 
 // globals
-static FCB file;
 static MenuItem *menuItems = NULL;
 static int menuItemCount = 0;
 static int selectedOption = 0;
@@ -172,7 +171,7 @@ void main(void)
     while(1)
     {
         PrintMenu();
-        Poke(CSRSW, 0);key = WaitKey();
+        while(key=Inkey(),!key);
         if (key == KEY_ESC) break;
         if (key == 31) IncreaseOption();
         if (key == 30) DecreaseOption();
