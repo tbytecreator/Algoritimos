@@ -1,4 +1,3 @@
-@echo off
 ver
 path %1\utils
 set expert=on

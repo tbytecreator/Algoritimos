@@ -7,6 +7,7 @@
 #include "fusion-c/header/io.h"
 
 #define KEY_ESC 27
+#define KEY_ENTER 13
 
 typedef struct 
 {
@@ -166,6 +167,7 @@ void main(void)
     DrawBox(0,3,40,15);
     DrawBox(0,19,40,2);
     Locate(1,20);Print("ESCOLHA UM ARQUIVO");
+    
     ReadFiles();
     
     while(1)
@@ -175,7 +177,7 @@ void main(void)
         if (key == KEY_ESC) break;
         if (key == 31) IncreaseOption();
         if (key == 30) DecreaseOption();
-        if (key == 13) ExecuteOption();
+        if (key == KEY_ENTER) ExecuteOption();
     }
     Cls();
 }
