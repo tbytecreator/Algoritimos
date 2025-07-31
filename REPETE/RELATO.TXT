@@ -1,0 +1,34 @@
+Relato
+------
+
+    O representante de classe precisa fazer a chamada de todos 
+os alunos presentes em classe. Ele deve registrar o nome de
+cada um dos alunos na classe, até que ele tenha anotado o 
+nome de todos eles.
+    No final da aula o professor quer receber um relatório que 
+inclua a data da aula (registrar o dia das presenças) e o nome
+de cada aluno que compareceu naquela aula. 
+
+ 
+Repita até
+----------
+
+repita
+    c1
+    c2
+    c3
+    ...
+ate <condição>
+
+Enquanto (condição avaliada no início)
+--------------------------------------
+
+enquanto <condição> faça
+    c1
+    c2
+    c3
+    ...
+fim-Enquanto
+
+
+
