@@ -19,7 +19,7 @@
 # Arquivo fonte para compilar
 SOURCE = repete.c
 DEST = dsk/
-HEX2BIN = /usr/local/bin/hex2bin
+HEX2BIN = /home/tbytecreator/dev/tbytecreator/Algoritimos/REPETE/Tools/Hex2Bin/Hex2bin-2.5 linux
 
 # Target padrão: compila e executa no emulador
 all: emulator

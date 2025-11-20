@@ -10,73 +10,81 @@ Area                                    Addr        Size        Decimal Bytes (A
      00000000  .__.ABS.                           
      00000000  l__CABS                         
      00000000  l__DABS                         
-     00000000  l__DATA                         
      00000000  l__HEADER                       
      00000000  l__HEAP                         
      00000000  l__HOME                         
-     00000000  l__INITIALIZER                  
      00000000  s__CABS                         
      00000000  s__DABS                         
      00000000  s__HEADER                       
      00000000  s__HEADER0                      
      00000001  l__GSFINAL                      
-     00000002  l__INITIALIZED                  
+     00000002  l__INITIALIZER                  
+     00000004  l__INITIALIZED                  
      00000006  l__HEADER0                      
      0000000F  l__GSINIT                       
      00000106  s__CODE                         
-     0000028D  l__CODE                         
-     00000393  s__DATA                         
-     00000393  s__INITIALIZED                  
-     00000395  s__GSINIT                       
-     00000395  s__HOME                         
-     000003A4  s__GSFINAL                      
-     000003A5  s__HEAP                         
-     000003A5  s__INITIALIZER                  
+     00000402  l__CODE                         
+     00000508  s__DATA                         
+     000005E3  l__DATA                         
+     00000AEB  s__INITIALIZED                  
+     00000AEF  s__GSINIT                       
+     00000AEF  s__HOME                         
+     00000AFE  s__GSFINAL                      
+     00000AFF  s__INITIALIZER                  
+     00000B01  s__HEAP                         
 
 ASxxxx Linker V03.00/V05.40 + sdld,  page 2.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000106    0000028D =         653. bytes (REL,CON)
+_CODE                               00000106    00000402 =        1026. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00000106  _main                              repete
-     000002B4  _Cls                               
-     000002C5  _WaitKey                           
-     000002D9  _Width                             width
-     0000030F  _Print                             print
-     00000339  ___sdcc_enter_ix                   
-     00000343  _Screen                            
-     0000036F  _PrintChar                         
-     00000381  _bchput                            
+     00000106  _ReceberAluno                      repete
+     00000152  _GravarAluno                       repete
+     00000183  _main                              repete
+     00000321  _Cls                               
+     00000332  _WaitKey                           
+     00000346  _Width                             width
+     0000037C  _InputString                       
+     000003F5  _Print                             print
+     0000041F  ___sdcc_enter_ix                   
+     00000429  _PrintDec                          
+     000004B8  _Screen                            
+     000004E4  _PrintChar                         
+     000004F6  _bchput                            
+
 ASxxxx Linker V03.00/V05.40 + sdld,  page 3.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_INITIALIZED                        00000393    00000002 =           2. bytes (REL,CON)
+_DATA                               00000508    000005E3 =        1507. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00000393  _heap_top                          
+     00000508  _alunos                            repete
 
 ASxxxx Linker V03.00/V05.40 + sdld,  page 4.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_GSINIT                             00000395    0000000F =          15. bytes (REL,CON)
+_INITIALIZED                        00000AEB    00000004 =           4. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00000AEB  _totalAlunos                       repete
+     00000AED  _heap_top                          
+
 ASxxxx Linker V03.00/V05.40 + sdld,  page 5.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_GSFINAL                            000003A4    00000001 =           1. bytes (REL,CON)
+_GSINIT                             00000AEF    0000000F =          15. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -85,7 +93,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_HEADER0                            00000000    00000006 =           6. bytes (ABS,CON)
+_GSFINAL                            00000AFE    00000001 =           1. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -94,13 +102,31 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_HEAP                               000003A5    00000000 =           0. bytes (REL,CON)
+_INITIALIZER                        00000AFF    00000002 =           2. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     000003A5  _HEAP_start                        
-
 ASxxxx Linker V03.00/V05.40 + sdld,  page 8.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+_HEADER0                            00000000    00000006 =           6. bytes (ABS,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+ASxxxx Linker V03.00/V05.40 + sdld,  page 9.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+_HEAP                               00000B01    00000000 =           0. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00000B01  _HEAP_start                        
+
+ASxxxx Linker V03.00/V05.40 + sdld,  page 10.
 
 Files Linked                              [ module(s) ]
 
@@ -118,14 +144,18 @@ Libraries Linked                          [ object file ]
 /home/tbytecreator/dev/tbytecreator/Algoritimos/REPETE/fusion-c/lib/fusion.lib
                                           [ width.rel ]
 /home/tbytecreator/dev/tbytecreator/Algoritimos/REPETE/fusion-c/lib/fusion.lib
+                                          [ inputstring.rel ]
+/home/tbytecreator/dev/tbytecreator/Algoritimos/REPETE/fusion-c/lib/fusion.lib
                                           [ print.rel ]
 /usr/bin/../share/sdcc/lib/z80/z80.lib    [ crtenter.rel ]
+/home/tbytecreator/dev/tbytecreator/Algoritimos/REPETE/fusion-c/lib/fusion.lib
+                                          [ printdec.rel ]
 /home/tbytecreator/dev/tbytecreator/Algoritimos/REPETE/fusion-c/lib/fusion.lib
                                           [ screen.rel ]
 /home/tbytecreator/dev/tbytecreator/Algoritimos/REPETE/fusion-c/lib/fusion.lib
                                           [ printchar.rel ]
 
-ASxxxx Linker V03.00/V05.40 + sdld,  page 9.
+ASxxxx Linker V03.00/V05.40 + sdld,  page 11.
 
 User Base Address Definitions
 

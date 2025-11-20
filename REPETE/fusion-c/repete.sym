@@ -8,27 +8,29 @@ Symbol Table
     .__.CPU.                                                    =   00000000 L
     .__.H$L.                                                    =   00000000 L
     _Cls                                                            ******** GX
-  0 _Done_Version_tag                                               000000D9 R
+  0 _Done_Version_tag                                               0000000F R
+  0 _GravarAluno                                                    0000004C GR
+    _InputString                                                    ******** GX
     _Print                                                          ******** GX
+    _PrintDec                                                       ******** GX
+  0 _ReceberAluno                                                   00000000 GR
     _Screen                                                         ******** GX
     _WaitKey                                                        ******** GX
     _Width                                                          ******** GX
     ___sdcc_enter_ix                                                ******** GX
-  0 ___str_0                                                        00000106 R
-  0 ___str_1                                                        00000113 R
-  0 ___str_10                                                       0000016E R
-  0 ___str_11                                                       00000177 R
-  0 ___str_12                                                       00000180 R
-  0 ___str_13                                                       00000186 R
-  0 ___str_2                                                        00000118 R
-  0 ___str_3                                                        00000122 R
-  0 ___str_4                                                        00000125 R
-  0 ___str_5                                                        0000012F R
-  0 ___str_6                                                        00000139 R
-  0 ___str_7                                                        0000015D R
-  0 ___str_8                                                        00000163 R
-  0 ___str_9                                                        00000165 R
-  0 _main                                                           00000000 GR
+  0 ___str_0                                                        0000003C R
+  0 ___str_2                                                        0000017F R
+  0 ___str_3                                                        00000199 R
+  0 ___str_4                                                        000001C1 R
+  0 ___str_5                                                        000001C3 R
+  0 ___str_6                                                        000001DE R
+  0 ___str_7                                                        000001E1 R
+  0 ___str_8                                                        000001EA R
+  0 ___str_9                                                        000001F3 R
+  7 __xinit__totalAlunos                                            00000000 R
+  1 _alunos                                                         00000000 GR
+  0 _main                                                           0000007D GR
+  2 _totalAlunos                                                    00000000 GR
 
 
 ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180 / ZX-Next / eZ80 / R800)                          Page 2
@@ -36,13 +38,13 @@ Hexadecimal [32-Bits]
 
 Area Table
 
-   0 _CODE                                      size      1A3   flags    0
-   1 _DATA                                      size        0   flags    0
-   2 _INITIALIZED                               size        0   flags    0
+   0 _CODE                                      size      210   flags    0
+   1 _DATA                                      size      5DC   flags    0
+   2 _INITIALIZED                               size        2   flags    0
    3 _DABS                                      size        0   flags    8
    4 _HOME                                      size        0   flags    0
    5 _GSINIT                                    size        0   flags    0
    6 _GSFINAL                                   size        0   flags    0
-   7 _INITIALIZER                               size        0   flags    0
+   7 _INITIALIZER                               size        2   flags    0
    8 _CABS                                      size        0   flags    8
 
