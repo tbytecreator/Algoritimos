@@ -1,0 +1,286 @@
+                                      1 ;--------------------------------------------------------
+                                      2 ; File Created by SDCC : free open source ISO C Compiler
+                                      3 ; Version 4.5.0 #15242 (Linux)
+                                      4 ;--------------------------------------------------------
+                                      5 	.module repete
+                                      6 	
+                                      7 	.optsdcc -mz80 sdcccall(0)
+                                      8 ;--------------------------------------------------------
+                                      9 ; Public variables in this module
+                                     10 ;--------------------------------------------------------
+                                     11 	.globl _main
+                                     12 	.globl _WaitKey
+                                     13 	.globl _Width
+                                     14 	.globl _Screen
+                                     15 	.globl _Cls
+                                     16 	.globl _Print
+                                     17 ;--------------------------------------------------------
+                                     18 ; special function registers
+                                     19 ;--------------------------------------------------------
+                                     20 ;--------------------------------------------------------
+                                     21 ; ram data
+                                     22 ;--------------------------------------------------------
+                                     23 	.area _DATA
+                                     24 ;--------------------------------------------------------
+                                     25 ; ram data
+                                     26 ;--------------------------------------------------------
+                                     27 	.area _INITIALIZED
+                                     28 ;--------------------------------------------------------
+                                     29 ; absolute external ram data
+                                     30 ;--------------------------------------------------------
+                                     31 	.area _DABS (ABS)
+                                     32 ;--------------------------------------------------------
+                                     33 ; global & static initialisations
+                                     34 ;--------------------------------------------------------
+                                     35 	.area _HOME
+                                     36 	.area _GSINIT
+                                     37 	.area _GSFINAL
+                                     38 	.area _GSINIT
+                                     39 ;--------------------------------------------------------
+                                     40 ; Home
+                                     41 ;--------------------------------------------------------
+                                     42 	.area _HOME
+                                     43 	.area _HOME
+                                     44 ;--------------------------------------------------------
+                                     45 ; code
+                                     46 ;--------------------------------------------------------
+                                     47 	.area _CODE
+                                     48 ;repete.c:20: void main(void) 
+                                     49 ;	---------------------------------
+                                     50 ; Function main
+                                     51 ; ---------------------------------
+    00000000                         52 _main::
+    00000000 DD E5            [15]   53 	push	ix
+    00000002 DD 21 00 00      [14]   54 	ld	ix,#0
+    00000006 DD 39            [15]   55 	add	ix,sp
+    00000008 21 85 FF         [10]   56 	ld	hl, #-123
+    0000000B 39               [11]   57 	add	hl, sp
+    0000000C F9               [ 6]   58 	ld	sp, hl
+                                     59 ;repete.c:25: Screen(0);
+    0000000D AF               [ 4]   60 	xor	a, a
+    0000000E F5               [11]   61 	push	af
+    0000000F 33               [ 6]   62 	inc	sp
+    00000010 CDr00r00         [17]   63 	call	_Screen
+    00000013 33               [ 6]   64 	inc	sp
+                                     65 ;repete.c:26: Width(40);
+    00000014 3E 28            [ 7]   66 	ld	a, #0x28
+    00000016 F5               [11]   67 	push	af
+    00000017 33               [ 6]   68 	inc	sp
+    00000018 CDr00r00         [17]   69 	call	_Width
+    0000001B 33               [ 6]   70 	inc	sp
+                                     71 ;repete.c:27: Cls();
+    0000001C CDr00r00         [17]   72 	call	_Cls
+                                     73 ;repete.c:30: strcpy(meuEndereco.rua, "Av. Paulista");
+    0000001F 21 00 00         [10]   74 	ld	hl, #0
+    00000022 39               [11]   75 	add	hl, sp
+    00000023 EB               [ 4]   76 	ex	de, hl
+    00000024 21r2Ar01         [10]   77 	ld	hl, #___str_0
+    00000027 AF               [ 4]   78 	xor	a, a
+    00000028                         79 00103$:
+    00000028 BE               [ 7]   80 	cp	a, (hl)
+    00000029 ED A0            [16]   81 	ldi
+    0000002B 20 FB            [12]   82 	jr	NZ, 00103$
+                                     83 ;repete.c:31: strcpy(meuEndereco.numero, "1578");
+    0000002D 21 32 00         [10]   84 	ld	hl, #50
+    00000030 39               [11]   85 	add	hl, sp
+    00000031 EB               [ 4]   86 	ex	de, hl
+    00000032 21r37r01         [10]   87 	ld	hl, #___str_1
+    00000035 AF               [ 4]   88 	xor	a, a
+    00000036                         89 00104$:
+    00000036 BE               [ 7]   90 	cp	a, (hl)
+    00000037 ED A0            [16]   91 	ldi
+    00000039 20 FB            [12]   92 	jr	NZ, 00104$
+                                     93 ;repete.c:32: strcpy(meuEndereco.cidade, "Sao Paulo");
+    0000003B 21 3C 00         [10]   94 	ld	hl, #60
+    0000003E 39               [11]   95 	add	hl, sp
+    0000003F EB               [ 4]   96 	ex	de, hl
+    00000040 21r3Cr01         [10]   97 	ld	hl, #___str_2
+    00000043 AF               [ 4]   98 	xor	a, a
+    00000044                         99 00105$:
+    00000044 BE               [ 7]  100 	cp	a, (hl)
+    00000045 ED A0            [16]  101 	ldi
+    00000047 20 FB            [12]  102 	jr	NZ, 00105$
+                                    103 ;repete.c:33: strcpy(meuEndereco.estado, "SP");
+    00000049 21 6E 00         [10]  104 	ld	hl, #110
+    0000004C 39               [11]  105 	add	hl, sp
+    0000004D EB               [ 4]  106 	ex	de, hl
+    0000004E 21r46r01         [10]  107 	ld	hl, #___str_3
+    00000051 AF               [ 4]  108 	xor	a, a
+    00000052                        109 00106$:
+    00000052 BE               [ 7]  110 	cp	a, (hl)
+    00000053 ED A0            [16]  111 	ldi
+    00000055 20 FB            [12]  112 	jr	NZ, 00106$
+                                    113 ;repete.c:34: strcpy(meuEndereco.cep, "01310-200");
+    00000057 21 71 00         [10]  114 	ld	hl, #113
+    0000005A 39               [11]  115 	add	hl, sp
+    0000005B EB               [ 4]  116 	ex	de, hl
+    0000005C 21r49r01         [10]  117 	ld	hl, #___str_4
+    0000005F AF               [ 4]  118 	xor	a, a
+    00000060                        119 00107$:
+    00000060 BE               [ 7]  120 	cp	a, (hl)
+    00000061 ED A0            [16]  121 	ldi
+    00000063 20 FB            [12]  122 	jr	NZ, 00107$
+                                    123 ;repete.c:37: Print("Endereco\n");
+    00000065 21r53r01         [10]  124 	ld	hl, #___str_5
+    00000068 E5               [11]  125 	push	hl
+    00000069 CDr00r00         [17]  126 	call	_Print
+                                    127 ;repete.c:38: Print("==================================\n");
+    0000006C 21r5Dr01         [10]  128 	ld	hl, #___str_6
+    0000006F E3               [19]  129 	ex	(sp),hl
+    00000070 CDr00r00         [17]  130 	call	_Print
+                                    131 ;repete.c:39: Print("Rua: ");
+    00000073 21r81r01         [10]  132 	ld	hl, #___str_7
+    00000076 E3               [19]  133 	ex	(sp),hl
+    00000077 CDr00r00         [17]  134 	call	_Print
+    0000007A F1               [10]  135 	pop	af
+                                    136 ;repete.c:40: Print(meuEndereco.rua);
+    0000007B 21 00 00         [10]  137 	ld	hl, #0
+    0000007E 39               [11]  138 	add	hl, sp
+    0000007F E5               [11]  139 	push	hl
+    00000080 CDr00r00         [17]  140 	call	_Print
+                                    141 ;repete.c:41: Print("\n");
+    00000083 21r87r01         [10]  142 	ld	hl, #___str_8
+    00000086 E3               [19]  143 	ex	(sp),hl
+    00000087 CDr00r00         [17]  144 	call	_Print
+                                    145 ;repete.c:42: Print("Numero: ");
+    0000008A 21r89r01         [10]  146 	ld	hl, #___str_9
+    0000008D E3               [19]  147 	ex	(sp),hl
+    0000008E CDr00r00         [17]  148 	call	_Print
+    00000091 F1               [10]  149 	pop	af
+                                    150 ;repete.c:43: Print(meuEndereco.numero);
+    00000092 21 32 00         [10]  151 	ld	hl, #50
+    00000095 39               [11]  152 	add	hl, sp
+    00000096 E5               [11]  153 	push	hl
+    00000097 CDr00r00         [17]  154 	call	_Print
+                                    155 ;repete.c:44: Print("\n");
+    0000009A 21r87r01         [10]  156 	ld	hl, #___str_8
+    0000009D E3               [19]  157 	ex	(sp),hl
+    0000009E CDr00r00         [17]  158 	call	_Print
+                                    159 ;repete.c:45: Print("Cidade: ");
+    000000A1 21r92r01         [10]  160 	ld	hl, #___str_10
+    000000A4 E3               [19]  161 	ex	(sp),hl
+    000000A5 CDr00r00         [17]  162 	call	_Print
+    000000A8 F1               [10]  163 	pop	af
+                                    164 ;repete.c:46: Print(meuEndereco.cidade);
+    000000A9 21 3C 00         [10]  165 	ld	hl, #60
+    000000AC 39               [11]  166 	add	hl, sp
+    000000AD E5               [11]  167 	push	hl
+    000000AE CDr00r00         [17]  168 	call	_Print
+                                    169 ;repete.c:47: Print("\n");
+    000000B1 21r87r01         [10]  170 	ld	hl, #___str_8
+    000000B4 E3               [19]  171 	ex	(sp),hl
+    000000B5 CDr00r00         [17]  172 	call	_Print
+                                    173 ;repete.c:48: Print("Estado: ");
+    000000B8 21r9Br01         [10]  174 	ld	hl, #___str_11
+    000000BB E3               [19]  175 	ex	(sp),hl
+    000000BC CDr00r00         [17]  176 	call	_Print
+    000000BF F1               [10]  177 	pop	af
+                                    178 ;repete.c:49: Print(meuEndereco.estado);
+    000000C0 21 6E 00         [10]  179 	ld	hl, #110
+    000000C3 39               [11]  180 	add	hl, sp
+    000000C4 E5               [11]  181 	push	hl
+    000000C5 CDr00r00         [17]  182 	call	_Print
+                                    183 ;repete.c:50: Print("\n");
+    000000C8 21r87r01         [10]  184 	ld	hl, #___str_8
+    000000CB E3               [19]  185 	ex	(sp),hl
+    000000CC CDr00r00         [17]  186 	call	_Print
+                                    187 ;repete.c:51: Print("CEP: ");
+    000000CF 21rA4r01         [10]  188 	ld	hl, #___str_12
+    000000D2 E3               [19]  189 	ex	(sp),hl
+    000000D3 CDr00r00         [17]  190 	call	_Print
+    000000D6 F1               [10]  191 	pop	af
+                                    192 ;repete.c:52: Print(meuEndereco.cep);
+    000000D7 21 71 00         [10]  193 	ld	hl, #113
+    000000DA 39               [11]  194 	add	hl, sp
+    000000DB E5               [11]  195 	push	hl
+    000000DC CDr00r00         [17]  196 	call	_Print
+                                    197 ;repete.c:53: Print("\n");
+    000000DF 21r87r01         [10]  198 	ld	hl, #___str_8
+    000000E2 E3               [19]  199 	ex	(sp),hl
+    000000E3 CDr00r00         [17]  200 	call	_Print
+                                    201 ;repete.c:54: Print("==================================\n");
+    000000E6 21r5Dr01         [10]  202 	ld	hl, #___str_6
+    000000E9 E3               [19]  203 	ex	(sp),hl
+    000000EA CDr00r00         [17]  204 	call	_Print
+                                    205 ;repete.c:57: Print("\nPressione qualquer tecla...");
+    000000ED 21rAAr01         [10]  206 	ld	hl, #___str_13
+    000000F0 E3               [19]  207 	ex	(sp),hl
+    000000F1 CDr00r00         [17]  208 	call	_Print
+    000000F4 F1               [10]  209 	pop	af
+                                    210 ;repete.c:58: WaitKey();
+    000000F5 CDr00r00         [17]  211 	call	_WaitKey
+                                    212 ;repete.c:59: }
+    000000F8 DD F9            [10]  213 	ld	sp, ix
+    000000FA DD E1            [14]  214 	pop	ix
+    000000FC C9               [10]  215 	ret
+    000000FD                        216 _Done_Version_tag:
+    000000FD 4D 61 64 65 20 77 69   217 	.ascii "Made with FUSION-C 1.3 R21010 (c)EBSOFT:2021"
+             74 68 20 46 55 53 49
+             4F 4E 2D 43 20 31 2E
+             33 20 52 32 31 30 31
+             30 20 28 63 29 45 42
+             53 4F 46 54 3A 32 30
+             32 31
+    00000129 00                     218 	.db 0x00
+    0000012A                        219 ___str_0:
+    0000012A 41 76 2E 20 50 61 75   220 	.ascii "Av. Paulista"
+             6C 69 73 74 61
+    00000136 00                     221 	.db 0x00
+    00000137                        222 ___str_1:
+    00000137 31 35 37 38            223 	.ascii "1578"
+    0000013B 00                     224 	.db 0x00
+    0000013C                        225 ___str_2:
+    0000013C 53 61 6F 20 50 61 75   226 	.ascii "Sao Paulo"
+             6C 6F
+    00000145 00                     227 	.db 0x00
+    00000146                        228 ___str_3:
+    00000146 53 50                  229 	.ascii "SP"
+    00000148 00                     230 	.db 0x00
+    00000149                        231 ___str_4:
+    00000149 30 31 33 31 30 2D 32   232 	.ascii "01310-200"
+             30 30
+    00000152 00                     233 	.db 0x00
+    00000153                        234 ___str_5:
+    00000153 45 6E 64 65 72 65 63   235 	.ascii "Endereco"
+             6F
+    0000015B 0A                     236 	.db 0x0a
+    0000015C 00                     237 	.db 0x00
+    0000015D                        238 ___str_6:
+    0000015D 3D 3D 3D 3D 3D 3D 3D   239 	.ascii "=================================="
+             3D 3D 3D 3D 3D 3D 3D
+             3D 3D 3D 3D 3D 3D 3D
+             3D 3D 3D 3D 3D 3D 3D
+             3D 3D 3D 3D 3D 3D
+    0000017F 0A                     240 	.db 0x0a
+    00000180 00                     241 	.db 0x00
+    00000181                        242 ___str_7:
+    00000181 52 75 61 3A 20         243 	.ascii "Rua: "
+    00000186 00                     244 	.db 0x00
+    00000187                        245 ___str_8:
+    00000187 0A                     246 	.db 0x0a
+    00000188 00                     247 	.db 0x00
+    00000189                        248 ___str_9:
+    00000189 4E 75 6D 65 72 6F 3A   249 	.ascii "Numero: "
+             20
+    00000191 00                     250 	.db 0x00
+    00000192                        251 ___str_10:
+    00000192 43 69 64 61 64 65 3A   252 	.ascii "Cidade: "
+             20
+    0000019A 00                     253 	.db 0x00
+    0000019B                        254 ___str_11:
+    0000019B 45 73 74 61 64 6F 3A   255 	.ascii "Estado: "
+             20
+    000001A3 00                     256 	.db 0x00
+    000001A4                        257 ___str_12:
+    000001A4 43 45 50 3A 20         258 	.ascii "CEP: "
+    000001A9 00                     259 	.db 0x00
+    000001AA                        260 ___str_13:
+    000001AA 0A                     261 	.db 0x0a
+    000001AB 50 72 65 73 73 69 6F   262 	.ascii "Pressione qualquer tecla..."
+             6E 65 20 71 75 61 6C
+             71 75 65 72 20 74 65
+             63 6C 61 2E 2E 2E
+    000001C6 00                     263 	.db 0x00
+                                    264 	.area _CODE
+                                    265 	.area _INITIALIZER
+                                    266 	.area _CABS (ABS)
