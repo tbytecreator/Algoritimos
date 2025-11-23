@@ -1,13 +1,12 @@
-#include <stdio.h>
-#include <string.h>
-#include "fusion-c/header/msx_fusion.h"
-
 // ===================================
 // Exemplo chamada de sala de aula
 // ===================================
 // MANOEL NETO - 2025-11-20
 // FUSION-C / MSX
 // ===================================
+#include <stdio.h>
+#include <string.h>
+#include "fusion-c/header/msx_fusion.h"
 
 // estruturas 
 typedef struct 
@@ -20,14 +19,18 @@ Aluno alunos[50];
 int totalAlunos = 0;
 
 // funções
-void ReceberAluno(Aluno *a)
+char* ReceberAluno()
 {
+  static char nome[30];
   Print("Nome do aluno: ");
-  InputString(a->nome, 29);
+  InputString(nome, 29);
+  return nome;
 }
 
-void GravarAluno(Aluno a)
+void GravarAluno(char* nomeAluno)
 {
+  Aluno a;
+  strcpy(a.nome, nomeAluno);
   alunos[totalAlunos] = a;
   totalAlunos++;
 }
@@ -48,13 +51,13 @@ int main()
   while(1)
   {
     Print("Digite o nome (ou Enter para terminar)\n");
-    ReceberAluno(&alunoPresente);
+    strcpy(alunoPresente.nome, ReceberAluno());
     
     // Se nome vazio, sai do loop
     if(alunoPresente.nome[0] == '\0' || alunoPresente.nome[0] == '\n')
       break;
       
-    GravarAluno(alunoPresente);
+    GravarAluno(alunoPresente.nome);
     Print("\n");
   }
 
