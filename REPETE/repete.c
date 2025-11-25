@@ -35,10 +35,23 @@ void GravarAluno(char* nomeAluno)
   totalAlunos++;
 }
 
+void ListarAlunos()
+{
+  int i;  
+  // imprime os alunos registrados
+  Print("\n=== ALUNOS PRESENTES ===\n");
+  for (i = 0; i < totalAlunos; i++) 
+  {
+    PrintDec(i+1);
+    Print(". ");
+    Print(alunos[i].nome);
+    Print("\n");
+  }
+}
+
 int main() 
 {
   Aluno alunoPresente;
-  int i;
   
   // Configurar tela
   Screen(0);
@@ -61,15 +74,7 @@ int main()
     Print("\n");
   }
 
-  // imprime os alunos registrados
-  Print("\n=== ALUNOS PRESENTES ===\n");
-  for (i = 0; i < totalAlunos; i++) 
-  {
-    PrintDec(i+1);
-    Print(". ");
-    Print(alunos[i].nome);
-    Print("\n");
-  }
+  ListarAlunos();
   
   Print("\nTotal: ");
   PrintDec(totalAlunos);
